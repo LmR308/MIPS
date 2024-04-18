@@ -4,3 +4,4 @@ It implements the mutual conversion between assembly instructions and binary enc
 Note:
 We specify that the assembly instruction format follows the assembly representation definition.
 eg.add $s1,$t0,$s4 or add $17,$8,$20.
+hexToInst.js is used to generate test data for binary encoding and corresponding assembly instruction representations through the MIPS32 binary and assembly instruction converter on the webpage[The link is as follows:http://mipsconverter.com/instruction.html].

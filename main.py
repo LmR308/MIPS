@@ -18,7 +18,10 @@ def load_MIPS32_manual():
         name = one_institution_format[0]
         Institution_information[name] = {}
         Institution_information[name]['opcode'] = row[3]
-        Institution_information[name]['func'] = row[-1]
+        for va in row:
+            if va == "empty":
+                break
+            Institution_information[name]['func'] = va
         if len(one_institution_format) >= 2:
             Institution_information[name]['format'] = [i for i in one_institution_format[1].split(',')]
         else:
@@ -62,7 +65,7 @@ def match_institution_format(formats, Hex, rs, rt, rd, sa, function, offset):
         elif formats[idx] == 'rd':
             Hex = Hex + str(' $') + rd
         elif formats[idx] == 'sa':
-            Hex = Hex + str(' $') + sa
+            Hex = Hex + str(' ') + sa
         else:
             Hex = Hex + str(' ') + offset
     return Hex
@@ -72,7 +75,7 @@ def Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_d
     opcode = int(binary[:6], 2)
     Institution, rs, rt, rd, sa, function, offset = str(''), 0, 0, 0, 0, 0, 0
     if opcode == 0:#R-Type Institution
-        rs, rt, rd, sa, function = int(binary[6:11], 2), int(binary[11:16], 2), int(binary[16:21], 2), int(binary[21:26], 2), int(binary[-6:], 2)
+        rs, rt, rd, sa, function = int(binary[6:11], 2), int(binary[11:16], 2), int(binary[16:21], 2), str(int(binary[21:26], 2)), int(binary[-6:], 2)
         institution_name = str(function_table[function % int(2 ** 3)][int(function / int(2 ** 3))])
         if tp == 'name':
             rs, rt, rd = Register_dict[rs], Register_dict[rt], Register_dict[rd]
@@ -103,7 +106,7 @@ def Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_d
 def Institution_to_Hex(input, Institution_formation, Register_idx_dict, tp):
     tl_institution = input.split()
     institution_name = tl_institution[0]
-    Hex, formats = str(''), tl_institution[1].split(',')
+    Hex, formats = str(''), [tl_institution[idx].replace(',', '') for idx in range(1, len(tl_institution), 1)]
     formats = [i.replace('$', '') for i in formats]
     if tp == 'name':
         name_to_idx = lambda f: [str(Register_idx_dict[x]) if i != len(f) - 1 else x for i, x in enumerate(f)]
@@ -139,10 +142,23 @@ def Institution_to_Hex(input, Institution_formation, Register_idx_dict, tp):
         Hex = Hex + opcode + rs + rt + rd + sa + func
     return Hex
 
+def compare_test(own, std):
+    if len(own) != len(std):
+        print('error')
+    for idx in range(len(own) - 1):
+        own[idx] = own[idx].replace(',', '')
+        if own[idx] != std[idx]:
+            print(f'{result} {std_institution}')
+
 if __name__ == '__main__':
     opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
 
-    result = Hex_to_Institution('0x014B4820', opcode_table, function_table, rt_table, Register_dict, Institution_information, tp='number')
-    # result = Institution_to_Hex('SLL $t0,$s3,3', Institution_information, Register_idx_dict, tp='name')
-    print(result)
-    # print(opcode_table.info())
+    #data test
+    with open(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\\test_data.txt', mode='r', encoding='utf-8') as file:
+        for row in file:
+            row = row.strip().split(' ')
+            Hex = str('0x') + str(row[0])
+            std_institution = [row[i] for i in range(1, len(row))]
+            result = Hex_to_Institution(Hex, opcode_table, function_table, rt_table, Register_dict, Institution_information, tp='number')
+            result = result.split(' ')
+            compare_test(result, std_institution)
