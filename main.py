@@ -53,16 +53,16 @@ def Hex_to_bin(input, length):
 
 def match_institution_format(formats, Hex, rs, rt, rd, sa, function, offset):
     for idx in range(len(formats)):
+        if idx != 0:
+            Hex = Hex + str(',')
         if formats[idx] == 'rs':
-            Hex = Hex + str(' ') + rs
+            Hex = Hex + str(' $') + rs
         elif formats[idx] == 'rt':
-            Hex = Hex + str(' ') + rt
+            Hex = Hex + str(' $') + rt
         elif formats[idx] == 'rd':
-            Hex = Hex + str(' ') + rd
+            Hex = Hex + str(' $') + rd
         elif formats[idx] == 'sa':
-            Hex = Hex + str(' ') + sa
-        elif formats[idx] == 'func':
-            Hex = Hex + str(' ') + function
+            Hex = Hex + str(' $') + sa
         else:
             Hex = Hex + str(' ') + offset
     return Hex
@@ -79,16 +79,23 @@ def Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_d
         else:
             rs, rt, rd = str(rs), str(rt), str(rd)
     elif opcode == 1:
-        rs, rt, offset = int(binary[6:11], 2), int(binary[11:16], 2), int(binary[16:], 2)
+        rs, rt, offset = int(binary[6:11], 2), int(binary[11:16], 2), str(int(binary[16:], 2))
         institution_name = str(rt_table[rt % int(2 ** 2)][int(rt / int(2 ** 3))])
         if tp == 'name':
             rs, rt = Register_dict[rs], Register_dict[rt]
         else:
             rs, rt = str(rs), str(rt)
     else :
-        offset = int(binary[6:], 2)
         institution_name = str(opcode_table[opcode % int(2 ** 3)][int(opcode / int(2 ** 3))])
-    Institution = Institution + str(' ') + institution_name
+        if institution_name == 'J' or institution_name == 'JAL':
+            offset = Hex_to_bin(int(binary[6:], 2), 26)
+        else:
+            rs, rt, offset = int(binary[6:11], 2), int(binary[11:16], 2), Hex_to_bin(int(binary[16:], 2), 16)
+            if tp == 'name':
+                rs, rt = Register_dict[rs], Register_dict[rt]
+            else:
+                rs, rt = str(rs), str(rt)
+    Institution = Institution + institution_name
     formats = Intitution_formation[institution_name]['format']
     Institution = match_institution_format(formats, Institution, rs, rt, rd, sa, function, offset)
     return Institution
@@ -136,6 +143,6 @@ if __name__ == '__main__':
     opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
 
     result = Hex_to_Institution('0x014B4820', opcode_table, function_table, rt_table, Register_dict, Institution_information, tp='number')
-    result = Institution_to_Hex('SLL $t0,$s3,3', Institution_information, Register_idx_dict, tp='name')
+    # result = Institution_to_Hex('SLL $t0,$s3,3', Institution_information, Register_idx_dict, tp='name')
     print(result)
     # print(opcode_table.info())
