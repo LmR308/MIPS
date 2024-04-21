@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c2371bb-9b0b-46e9-81b4-68c86bc502fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/数据流图.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -108,7 +107,7 @@
       <workItem from="1713329794154" duration="3546000" />
       <workItem from="1713354513545" duration="9994000" />
       <workItem from="1713408267830" duration="25588000" />
-      <workItem from="1713628327494" duration="12803000" />
+      <workItem from="1713628327494" duration="12910000" />
     </task>
     <task id="LOCAL-00001" summary="first complete task">
       <created>1713425833363</created>
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713718846438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modify .gitignore">
+      <created>1713719734668</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713719734668</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,17 +147,18 @@
     <MESSAGE value="first complete task" />
     <MESSAGE value="fix main.py &amp;&amp; improve readme.md" />
     <MESSAGE value="add png" />
-    <option name="LAST_COMMIT_MESSAGE" value="add png" />
+    <MESSAGE value="modify .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify .gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1713428063623">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1713428063623" />
-    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713718845739">
+    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713719733969">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713718845739" />
+    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713719733969" />
     <state x="707" y="335" key="FileChooserDialogImpl" timestamp="1713719566071">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
