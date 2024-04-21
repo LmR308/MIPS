@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c2371bb-9b0b-46e9-81b4-68c86bc502fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       <workItem from="1713329794154" duration="3546000" />
       <workItem from="1713354513545" duration="9994000" />
       <workItem from="1713408267830" duration="25588000" />
-      <workItem from="1713628327494" duration="11699000" />
+      <workItem from="1713628327494" duration="11922000" />
     </task>
     <task id="LOCAL-00001" summary="first complete task">
       <created>1713425833363</created>
@@ -117,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713425833363</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix main.py &amp;&amp; improve readme.md">
+      <created>1713718707415</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713718707415</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,17 +130,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first complete task" />
-    <option name="LAST_COMMIT_MESSAGE" value="first complete task" />
+    <MESSAGE value="fix main.py &amp;&amp; improve readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix main.py &amp;&amp; improve readme.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1713428063623">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1713428063623" />
-    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713425832878">
+    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713718706484">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713425832878" />
+    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713718706484" />
     <state x="1061" y="456" key="FileChooserDialogImpl" timestamp="1713330019065">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -180,10 +186,10 @@
     </state>
     <state width="1663" height="259" key="GridCell.Tab.1.right/0.0.1707.1027@0.0.1707.1027" timestamp="1713717062104" />
     <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1713359032666" />
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1713425932241">
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1713718756062">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713425932241" />
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713718756062" />
     <state width="859" height="519" key="XDebugger.FullValuePopup" timestamp="1713717122134">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -194,10 +200,10 @@
     </state>
     <state x="643" y="385" key="com.intellij.ide.util.TipDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1713628327609" />
     <state x="965" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1713354514213" />
-    <state x="633" y="475" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1713425846294">
+    <state x="633" y="475" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1713718718555">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="633" y="475" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713425846294" />
+    <state x="633" y="475" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713718718555" />
     <state x="629" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1713715011339">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
