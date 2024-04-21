@@ -1,7 +1,0 @@
-Computer Architecture Experiment
-This project achieved Institution encode and decode based on MIPS32 manual.
-It implements the mutual conversion between assembly instructions and binary encoding.
-Note:
-We specify that the assembly instruction format follows the assembly representation definition.
-eg.add $s1,$t0,$s4 or add $17,$8,$20.
-hexToInst.js is used to generate test data for binary encoding and corresponding assembly instruction representations through the MIPS32 binary and assembly instruction converter on the webpage[The link is as follows:http://mipsconverter.com/instruction.html].

@@ -14,6 +14,9 @@ def load_MIPS32_manual():
     Institution_name, Register_dict, Register_idx_dict, Institution_information = {}, {}, {}, {}
 
     for idx, row in Institution_format_table.iterrows():
+        row[0] = row[0].replace('(', ' ')
+        row[0] = row[0].replace(')', ' ')
+        row[0] = row[0].replace(',', ' ')
         one_institution_format = row[0].split()
         name = one_institution_format[0]
         Institution_information[name] = {}
@@ -23,7 +26,7 @@ def load_MIPS32_manual():
                 break
             Institution_information[name]['func'] = va
         if len(one_institution_format) >= 2:
-            Institution_information[name]['format'] = [i for i in one_institution_format[1].split(',')]
+            Institution_information[name]['format'] = [i for i in one_institution_format[1:]]
         else:
             Institution_information[name]['format'] = []
     Register_dict[0] = str('zero')
@@ -142,13 +145,38 @@ def Institution_to_Hex(input, Institution_formation, Register_idx_dict, tp):
         Hex = Hex + opcode + rs + rt + rd + sa + func
     return Hex
 
-def compare_test(own, std):
+def test_Hex_to_Institution(own, std):
     if len(own) != len(std):
         print('error')
     for idx in range(len(own) - 1):
         own[idx] = own[idx].replace(',', '')
         if own[idx] != std[idx]:
             print(f'{result} {std_institution}')
+
+def extract_format(binary, institution_name, formats):
+    extract_binary = binary[:6]
+    for idx in range(1, len(formats), 1):
+        if formats[idx] == 'rs':
+            extract_binary = extract_binary + binary[6:11]
+        elif formats[idx] == 'rt':
+            extract_binary = extract_binary + binary[11:16]
+        elif formats[idx] == 'rd':
+            extract_binary = extract_binary + binary[16:21]
+        elif formats[idx] == 'sa':
+            extract_binary = extract_binary + binary[21:26]
+        elif formats[idx] == 'offset':
+            if institution_name == 'J' or institution_name == 'JAL':
+                extract_binary = extract_binary + binary[6:]
+            else:
+                extract_binary = extract_binary + binary[16:]
+    return extract_binary
+
+
+def test_Institution_to_Hex(own, std, institution_name, Institution_information):
+    ow = extract_format(own, institution_name, Institution_information[institution_name]['format'])
+    st = extract_format(std, institution_name, Institution_information[institution_name]['format'])
+    if ow != st:
+        print(f'{ow} {st} {institution_name}')
 
 if __name__ == '__main__':
     opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
@@ -160,5 +188,7 @@ if __name__ == '__main__':
             Hex = str('0x') + str(row[0])
             std_institution = [row[i] for i in range(1, len(row))]
             result = Hex_to_Institution(Hex, opcode_table, function_table, rt_table, Register_dict, Institution_information, tp='number')
+            binary = Institution_to_Hex(result, Institution_information, Register_idx_dict, tp='number')
             result = result.split(' ')
-            compare_test(result, std_institution)
+            test_Hex_to_Institution(result, std_institution)
+            test_Institution_to_Hex(binary, Hex_to_bin(int(Hex, 16), 32), result[0], Institution_information)
