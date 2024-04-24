@@ -10,7 +10,7 @@
 ### 设计原则  
 遵循***MIPS IV***架构下对32位指令进行编码以及解码的规则，将数据从引擎中独立出来，充分满足安全性和简洁性；代码编写满足可测试性及可维护性.  
 ### 文件说明  
-***get_table.py***是用来从网页[http://mipsconverter.com/opcodes.html]上获取MIPS Opcode Reference信息并将其存储到***table_data.xlsx***文件中.  
+***get_table.py***是用来从网页[http://mipsconverter.com/opcodes.html] 上获取MIPS Opcode Reference信息并将其存储到***table_data.xlsx***文件中.  
 ***hexToInst.js*** 是用来生成二进制编码与其对应的汇编指令的测试数据的，其测试数据格式为每行分别为一个二进制编码和对应的汇编指令，生成的测试数据存储到***test_data.txt***.  
 ***MIPS_manunal.xlsx***是通过Adobe ACrboat软件将***mips isa.pdf***中MIPS IV Architecture这个表格信息提取出来并存储到它这里.  
 ## 实现  
