@@ -34,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../科研实验/Dynaminc_Preference/HGNN-master" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -109,7 +109,7 @@
       <workItem from="1713408267830" duration="25588000" />
       <workItem from="1713628327494" duration="15677000" />
       <workItem from="1713803895354" duration="907000" />
-      <workItem from="1713847393504" duration="118000" />
+      <workItem from="1713847393504" duration="8054000" />
     </task>
     <task id="LOCAL-00001" summary="first complete task">
       <created>1713425833363</created>
@@ -174,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713847437619</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add Project Documents.md again">
+      <created>1713847523313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713847523313</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,25 +198,26 @@
     <MESSAGE value="modify .gitignore four times" />
     <MESSAGE value="delete .gitignore" />
     <MESSAGE value="add Project Documents.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Project Documents.md" />
+    <MESSAGE value="add Project Documents.md again" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Project Documents.md again" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1713428063623">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1713428063623" />
-    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713847437082">
+    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1713847522853">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713847437082" />
+    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1713847522853" />
     <state x="147" y="130" key="DiffContextDialog" timestamp="1713720638000">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="147" y="130" key="DiffContextDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1713720638000" />
-    <state x="707" y="335" key="FileChooserDialogImpl" timestamp="1713719566071">
+    <state x="707" y="335" key="FileChooserDialogImpl" timestamp="1713858758810">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="707" y="335" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1713719566071" />
+    <state x="707" y="335" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1713858758810" />
     <state x="1061" y="456" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1713330019065" />
     <state width="1663" height="376" key="GridCell.Tab.0.bottom" timestamp="1713796083039">
       <screen x="0" y="0" width="1707" height="1027" />
@@ -255,10 +263,10 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="355" y="156" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1713719664766" />
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1713847449750">
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1713847530516">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713847449750" />
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713847530516" />
     <state width="859" height="519" key="XDebugger.FullValuePopup" timestamp="1713717122134">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
