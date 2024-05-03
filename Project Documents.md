@@ -12,29 +12,29 @@
 计算机中指令按格式可以分为以下三类指令：
 
 1. I类指令
-   ![](I类指令.png)
+   ![](pngs/I类指令.png)
    <center> 图1</center>
    
 2. J类指令
-   ![](J类指令.png)
+   ![](pngs/J类指令.png)
    <center> 图2</center>
    
 3. R类指令
-   ![](R类指令.png)
+   ![](pngs/R类指令.png)
    <center> 图3</center>
 
 #### ***MIPS32***寄存器  
-   ![](寄存器.png)
+   ![](pngs/寄存器.png)
    <center> 图4</center>  
    
 #### ***MIPS IV***架构指令信息表
-   ![](opcode.png)
+   ![](pngs/opcode.png)
    <center> 图5</center>
    
-   ![](func.png)
+   ![](pngs/func.png)
    <center> 图6</center>
    
-   ![](rt.png)
+   ![](pngs/rt.png)
    <center> 图7</center>
    
 ### 编码规则
@@ -47,7 +47,7 @@
 并且根据上述图4将t0和s3转换成对应的序号值.
     
 3. 将各字段的值按照R类格式指令顺序拼接起来，并转换成32位二进制编码，如下图所示：
-   ![](例图.png)
+   ![](pngs/例图.png)
    <center> 图8</center>
 
 ### 解码规则
@@ -284,5 +284,6 @@ def test_Institution_to_Hex(own, std, institution_name, Institution_information)
 生成所有二进制编码与对应的汇编指令并存储在***test_data.txt***中，再通过调用***main.py***读取***test_data.txt***来完成测试.
 
 ## 参考资料
-MIPS32信息手册：***mips-isa.pdf***，MIPS Encoding and Decoding Instructions网页：[https://marz.utk.edu/my-courses/cosc130/lectures/encoding-and-decoding-instructions/#:~:text=MIPS%20Encoding%20and%20Decoding%20Instructions%201%20Learning%20Objectives,...%206%20Limitations%20for%20Jump%20and%20Branch%20]
+MIPS32信息手册：***mips-isa.pdf***.  
+MIPS Encoding and Decoding Instructions网页：[https://marz.utk.edu/my-courses/cosc130/lectures/encoding-and-decoding-instructions/#:~:text=MIPS%20Encoding%20and%20Decoding%20Instructions%201%20Learning%20Objectives,...%206%20Limitations%20for%20Jump%20and%20Branch%20]
 

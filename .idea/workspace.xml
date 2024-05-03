@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c2371bb-9b0b-46e9-81b4-68c86bc502fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/I类指令.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/J类指令.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Documents.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project Documents.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/R类指令.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/opcode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/例图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/寄存器.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据格式转换.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据获取.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/项目框架.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +113,7 @@
       <workItem from="1713847393504" duration="14450000" />
       <workItem from="1714304725214" duration="503000" />
       <workItem from="1714553601607" duration="2855000" />
-      <workItem from="1714749944293" duration="2566000" />
+      <workItem from="1714749944293" duration="2793000" />
     </task>
     <task id="LOCAL-00001" summary="first complete task">
       <created>1713425833363</created>
