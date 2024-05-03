@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c2371bb-9b0b-46e9-81b4-68c86bc502fe" name="Default Changelist" comment="modify Project Documents.md v2">
-      <change beforePath="$PROJECT_DIR$/.idea/MIPS_encode_decode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MIPS_encode_decode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7c2371bb-9b0b-46e9-81b4-68c86bc502fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Documents.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project Documents.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据流图.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +111,7 @@
       <workItem from="1713847393504" duration="14450000" />
       <workItem from="1714304725214" duration="503000" />
       <workItem from="1714553601607" duration="2855000" />
-      <workItem from="1714749944293" duration="1011000" />
+      <workItem from="1714749944293" duration="1101000" />
     </task>
     <task id="LOCAL-00001" summary="first complete task">
       <created>1713425833363</created>
@@ -203,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713966934729</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="modify Project Documents.md v3">
+      <created>1714750972005</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714750972005</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,17 +224,18 @@
     <MESSAGE value="add Project Documents.md again" />
     <MESSAGE value="modify Project Documents.md v1" />
     <MESSAGE value="modify Project Documents.md v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify Project Documents.md v2" />
+    <MESSAGE value="modify Project Documents.md v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify Project Documents.md v3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1713428063623">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="580" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1713428063623" />
-    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1714750947955">
+    <state x="425" y="151" key="CommitChangelistDialog2" timestamp="1714750970900">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1714750947955" />
+    <state x="425" y="151" key="CommitChangelistDialog2/0.0.1707.1027@0.0.1707.1027" timestamp="1714750970900" />
     <state x="147" y="130" key="DiffContextDialog" timestamp="1713720638000">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -291,10 +293,10 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="355" y="156" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1714553740135" />
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1713966943465">
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2" timestamp="1714750990053">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1713966943465" />
+    <state x="429" y="291" key="Vcs.Push.Dialog.v2/0.0.1707.1027@0.0.1707.1027" timestamp="1714750990053" />
     <state width="859" height="519" key="XDebugger.FullValuePopup" timestamp="1713717122134">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
