@@ -179,6 +179,7 @@ def test_Institution_to_Hex(own, std, institution_name, Institution_information)
         print(f'{ow} {st} {institution_name}')
 
 if __name__ == '__main__':
+
     opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
 
     #data test
