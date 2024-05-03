@@ -14,23 +14,29 @@
 1. I类指令
    ![](I类指令.png)
    <center> 图1</center>
+   
 2. J类指令
    ![](J类指令.png)
    <center> 图2</center>
+   
 3. R类指令
    ![](R类指令.png)
    <center> 图3</center>
 
 #### ***MIPS32***寄存器  
    ![](寄存器.png)
-   <center> 图4</center>
+   <center> 图4</center>  
+   
 #### ***MIPS IV***架构指令信息表
    ![](opcode.png)
    <center> 图5</center>
+   
    ![](func.png)
    <center> 图6</center>
+   
    ![](rt.png)
    <center> 图7</center>
+   
 ### 编码规则
 
 对于一个汇编指令，按照如下步骤对其编码生成对应的32位二进制编码，下面以汇编指令SLL $t0, $s3, 3举例说明：
@@ -278,3 +284,5 @@ def test_Institution_to_Hex(own, std, institution_name, Institution_information)
 生成所有二进制编码与对应的汇编指令并存储在***test_data.txt***中，再通过调用***main.py***读取***test_data.txt***来完成测试.
 
 ## 参考资料
+MIPS32信息手册：***mips-isa.pdf***，MIPS Encoding and Decoding Instructions网页：[https://marz.utk.edu/my-courses/cosc130/lectures/encoding-and-decoding-instructions/#:~:text=MIPS%20Encoding%20and%20Decoding%20Instructions%201%20Learning%20Objectives,...%206%20Limitations%20for%20Jump%20and%20Branch%20]
+
