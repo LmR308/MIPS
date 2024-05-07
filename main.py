@@ -1,14 +1,11 @@
 import pandas as pd
+import argparse
 
 def load_MIPS32_manual():
-    opcode_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx', sheet_name='opcode',
-                                 header=None)
-    function_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx',
-                                   sheet_name='function', header=None)
-    rt_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx', sheet_name='rt',
-                             header=None)
-    Institution_format_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\\table_data.xlsx',
-                                             dtype=str)
+    opcode_table = pd.read_excel(f'MIPS_manunal.xlsx', sheet_name='opcode',header=None)
+    function_table = pd.read_excel(f'MIPS_manunal.xlsx',sheet_name='function', header=None)
+    rt_table = pd.read_excel(f'MIPS_manunal.xlsx', sheet_name='rt',header=None)
+    Institution_format_table = pd.read_excel(f'table_data.xlsx',dtype=str)
     Institution_format_table = Institution_format_table.fillna("empty")
     Institution_format_table.replace({'imm': 'offset'}, inplace=True)
     Institution_name, Register_dict, Register_idx_dict, Institution_information = {}, {}, {}, {}
@@ -74,7 +71,7 @@ def match_institution_format(formats, Hex, rs, rt, rd, sa, function, offset):
     return Hex
 
 def Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_dict, Intitution_formation, tp):
-    binary = Hex_to_bin(int(input[2:], 16), 32)
+    binary = Hex_to_bin(input, 32)
     opcode = int(binary[:6], 2)
     Institution, rs, rt, rd, sa, function, offset = str(''), 0, 0, 0, 0, 0, 0
     if opcode == 0:#R-Type Institution
@@ -151,7 +148,7 @@ def test_Hex_to_Institution(own, std):
     for idx in range(len(own) - 1):
         own[idx] = own[idx].replace(',', '')
         if own[idx] != std[idx]:
-            print(f'{result} {std_institution}')
+            print(f'error occured')
 
 def extract_format(binary, institution_name, formats):
     extract_binary = binary[:6]
@@ -178,18 +175,35 @@ def test_Institution_to_Hex(own, std, institution_name, Institution_information)
     if ow != st:
         print(f'{ow} {st} {institution_name}')
 
-if __name__ == '__main__':
-
-    opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
-
-    #data test
-    with open(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\\test_data.txt', mode='r', encoding='utf-8') as file:
+def Verify_correctness(opcode_table, function_table, rt_table, Register_dict, Register_idx_dict ,Institution_information):
+    with open(f'test_data.txt', mode='r', encoding='utf-8') as file:
         for row in file:
             row = row.strip().split(' ')
             Hex = str('0x') + str(row[0])
             std_institution = [row[i] for i in range(1, len(row))]
-            result = Hex_to_Institution(Hex, opcode_table, function_table, rt_table, Register_dict, Institution_information, tp='number')
+            Hex = int(Hex[2:], 16)
+            result = Hex_to_Institution(Hex, opcode_table, function_table, rt_table, Register_dict,Institution_information, tp='number')
             binary = Institution_to_Hex(result, Institution_information, Register_idx_dict, tp='number')
             result = result.split(' ')
             test_Hex_to_Institution(result, std_institution)
-            test_Institution_to_Hex(binary, Hex_to_bin(int(Hex, 16), 32), result[0], Institution_information)
+            test_Institution_to_Hex(binary, Hex_to_bin(Hex, 32), result[0], Institution_information)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input', type=str, default='0b00000000000100110100000011000000', help='The data to be converted')
+    parser.add_argument('--type', type=str, default='bintoins', help='Data format conversion type')
+    parser.add_argument('--format', type=str, default='name', help='Assembly instruction register format')
+    opt = parser.parse_args()
+
+    opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information = load_MIPS32_manual()
+    # Verify_correctness(opcode_table, function_table, rt_table, Register_dict, Register_idx_dict, Institution_information)
+    if opt.type == str('bintoins'):
+        if opt.input[:2] == str('0b'):
+            input = int(opt.input[2:], 2)
+        if opt.input[:2] == str('0x'):
+            input = int(opt.input[2:], 16)
+        convert_result = Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_dict,Institution_information, tp=opt.format)
+    else:
+        convert_result = Institution_to_Hex(opt.input, Institution_information, Register_idx_dict, tp=opt.format)
+    print(f'the input data is {opt.input}')
+    print(f'the converted data is {convert_result}')

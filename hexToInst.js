@@ -455,6 +455,7 @@ function hexToInst(inputString = '0x014B4820') {
 	// document.getElementById('test').innerHTML = 'Binary: ' + parsedString
 
 	// 输出结果
-	// console.log(instructionOut)
+	console.log(instructionOut)
 	return instructionOut
 }
+hexToInst()

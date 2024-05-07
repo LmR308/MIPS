@@ -66,7 +66,7 @@
 
 ### 数据获取
 
-如项目原理所述，要完成对二进制编码与汇编指令转换器的实现需要三类指令格式，每个指令对应的指令格式，指令格式中不同字段的信息等***MIPS IV***架构信息，为了方便测试，采用穷举的方式生成测试数据.本项目通过下图所示方法获取所需信息并存储到对应文件上：
+如项目原理所述，要完成对二进制编码与汇编指令转换器的实现需要三类指令格式，每个指令对应的指令格式，指令格式中不同字段的信息等***MIPS IV***架构信息，本项目通过下图所示方法获取所需信息并存储到对应文件上：
 ![数据获取](pngs/数据获取.png)
 <center> 图9</center>
 
@@ -104,14 +104,10 @@ load_MIPS32_manual函数将有关的MIPS信息通过pandas读取MIPS_manunal.xls
 
 ```python
 def load_MIPS32_manual():
-    opcode_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx', sheet_name='opcode',
-                                 header=None)
-    function_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx',
-                                   sheet_name='function', header=None)
-    rt_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\MIPS_manunal.xlsx', sheet_name='rt',
-                             header=None)
-    Institution_format_table = pd.read_excel(f'D:\学习资料\课程学习\计算机体系结构\mips\MIPS_encode_decode\\table_data.xlsx',
-                                             dtype=str)
+    opcode_table = pd.read_excel(f'MIPS_manunal.xlsx', sheet_name='opcode',header=None)
+    function_table = pd.read_excel(f'MIPS_manunal.xlsx',sheet_name='function', header=None)
+    rt_table = pd.read_excel(f'MIPS_manunal.xlsx', sheet_name='rt',header=None)
+    Institution_format_table = pd.read_excel(f'table_data.xlsx',dtype=str)
     Institution_format_table = Institution_format_table.fillna("empty")
     Institution_format_table.replace({'imm': 'offset'}, inplace=True)
     Institution_name, Register_dict, Register_idx_dict, Institution_information = {}, {}, {}, {}
@@ -159,7 +155,7 @@ Hex_to_Institution函数实现了从十六进制编码到汇编指令的转换
 
 ```python
 def Hex_to_Institution(input, opcode_table, function_table, rt_table, Register_dict, Intitution_formation, tp):
-    binary = Hex_to_bin(int(input[2:], 16), 32)
+    binary = Hex_to_bin(input, 32)
     opcode = int(binary[:6], 2)
     Institution, rs, rt, rd, sa, function, offset = str(''), 0, 0, 0, 0, 0, 0
     if opcode == 0:#R-Type Institution
@@ -244,7 +240,7 @@ def test_Hex_to_Institution(own, std):
     for idx in range(len(own) - 1):
         own[idx] = own[idx].replace(',', '')
         if own[idx] != std[idx]:
-            print(f'{result} {std_institution}')
+            print(f'error occured')
 ```
 
 下面两个函数共同实现了检验汇编指令转对应二进制编码的正确性.由于指令有多种寻址方式，这导致了哪怕同属一类的指令再格式上也有所不同，
@@ -277,13 +273,28 @@ def test_Institution_to_Hex(own, std, institution_name, Institution_information)
     if ow != st:
         print(f'{ow} {st} {institution_name}')
 ```
+Verify_correctness函数用于通过***main.py***读取存储在***test_data.txt***中穷举的二进制编码来完成正确性检验.
+```python
+def Verify_correctness(opcode_table, function_table, rt_table, Register_dict, Register_idx_dict ,Institution_information):
+    with open(f'test_data.txt', mode='r', encoding='utf-8') as file:
+        for row in file:
+            row = row.strip().split(' ')
+            Hex = str('0x') + str(row[0])
+            std_institution = [row[i] for i in range(1, len(row))]
+            Hex = int(Hex[2:], 16)
+            result = Hex_to_Institution(Hex, opcode_table, function_table, rt_table, Register_dict,Institution_information, tp='number')
+            binary = Institution_to_Hex(result, Institution_information, Register_idx_dict, tp='number')
+            result = result.split(' ')
+            test_Hex_to_Institution(result, std_institution)
+            test_Institution_to_Hex(binary, Hex_to_bin(Hex, 32), result[0], Institution_information)
+```
 
 ## 测试
 
 本项目通过穷举的方式枚举***MIPS32***指令系统下所有可能的二进制编码，并通过***hexToInst.js***传入二进制编码，
-生成所有二进制编码与对应的汇编指令并存储在***test_data.txt***中，再通过调用***main.py***读取***test_data.txt***来完成测试.
+生成所有二进制编码与对应的汇编指令并存储在***test_data.txt***中，再通过调用***main.py***中Verify_correctness函数读取***test_data.txt***来完成测试.
 
 ## 参考资料
 MIPS32信息手册：***mips-isa.pdf***.  
-MIPS Encoding and Decoding Instructions网页：[https://marz.utk.edu/my-courses/cosc130/lectures/encoding-and-decoding-instructions/#:~:text=MIPS%20Encoding%20and%20Decoding%20Instructions%201%20Learning%20Objectives,...%206%20Limitations%20for%20Jump%20and%20Branch%20]
+MIPS Encoding and Decoding Instructions网页：[https://marz.utk.edu/my-courses/cosc130/lectures/encoding-and-decoding-instructions]
 
