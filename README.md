@@ -1,6 +1,6 @@
 # Computer Architecture Experiment
 ## Project background
-This project achieved Institution encode and decode based on MIPS32 manual.  
+This project achieved Instruction encode and decode based on MIPS32 manual.  
 It implements the mutual conversion between assembly instructions and binary encoding.  
 ## Project File Function Description
 The ***get_table.py*** is used to Crawling MIPS Opcode Reference information from web pages[http://mipsconverter.com/opcodes.html] to generate ***table_data.xlsx***.  
